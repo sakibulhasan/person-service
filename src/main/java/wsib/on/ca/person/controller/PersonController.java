@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import wsib.on.ca.person.converter.PersonConverter;
@@ -29,10 +30,11 @@ public class PersonController {
 			value="/persons",
 			method=RequestMethod.GET, 
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<PersonDTO> getPersons() {
+	public List<PersonDTO> getPersons(
+			@RequestParam(value="search", required=false) String search) {
 		log.info("getting person list");
 		
-		List<PersonDTO> personDTOs = service.getPersons().stream()
+		List<PersonDTO> personDTOs = service.getPersons(search).stream()
                 .map((person) -> converter.convert(person))
                 .collect(Collectors.toList());
 		

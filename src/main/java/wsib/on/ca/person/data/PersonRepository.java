@@ -37,4 +37,18 @@ public class PersonRepository {
 		return persons;
 	}
 
+	public List<Person> getPersons(String search) {
+		List<Person> persons = getPersons();
+		List<Person> result = new ArrayList<>();
+		
+		// this dummy data should be replaces by real database search query
+		for (Person p : persons) {
+			if (p.getFirstName().contains(search) || p.getLastName().contains(search)) {
+				result.add(p);
+			}
+		}
+
+		return result;
+	}
+
 }
