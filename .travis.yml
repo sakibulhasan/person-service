@@ -11,3 +11,6 @@ deploy:
  api-key: 
   secure: $HEROKU_API_KEY
  app: person-service
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) 
