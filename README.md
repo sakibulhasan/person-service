@@ -1,1 +1,2 @@
+[![Travis branch](https://img.shields.io/travis/sakibulhasan/person-service/master.svg)](https://travis-ci.org/sakibulhasan/person-service)
 [![Code Coverage](https://img.shields.io/codecov/c/github/sakibulhasan/person-service/master.svg)](https://codecov.io/github/sakibulhasan/person-service?branch=master)

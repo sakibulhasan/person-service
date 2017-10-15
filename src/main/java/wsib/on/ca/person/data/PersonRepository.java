@@ -44,7 +44,8 @@ public class PersonRepository {
 		
 		// this dummy data should be replaces by real database search query
 		for (Person p : persons) {
-			if (p.getFirstName().contains(search) || p.getLastName().contains(search)) {
+			if (p.getFirstName().toLowerCase().contains(search.toLowerCase()) || 
+					p.getLastName().toLowerCase().contains(search.toLowerCase())) {
 				result.add(p);
 			}
 		}
